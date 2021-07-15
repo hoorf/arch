@@ -1,0 +1,4 @@
+dependencies {
+    api(project(":arch-service:arch-service-system:system-client"))
+    api(project(":arch-service:arch-service-system:system-infrastructure"))
+}

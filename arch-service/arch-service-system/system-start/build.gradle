@@ -1,0 +1,10 @@
+
+
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    api(project(":arch-service:arch-service-system:system-adapter"))
+    api 'com.github.xiaoymin:knife4j-spring-boot-starter'
+
+
+}

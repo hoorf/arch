@@ -1,0 +1,9 @@
+
+dependencies {
+    api 'com.alibaba.cola:cola-component-dto'
+    api 'com.alibaba.cola:cola-component-domain-starter'
+    api 'com.alibaba.cola:cola-component-catchlog-starter'
+    api 'org.apache.commons:commons-lang3'
+    compileOnly 'org.springframework.boot:spring-boot-starter-web'
+
+}

@@ -1,0 +1,113 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        jcenter()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.2.6.RELEASE"
+    }
+
+    ext {
+        version {
+            springboot: '2.2.6.RELEASE'
+            cola: '4.0.1'
+            knife4j: '3.0.3'
+            hutool: '5.7.4'
+            fastjson: '1.2.75'
+        }
+    }
+}
+
+
+subprojects {
+    apply plugin: "java"
+    apply plugin: "java-library"
+    //apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'maven'
+    // java编译的时候缺省状态下会因为中文字符而失败
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    group = 'org.github.hoorf'
+    version = '1.0-SNAPSHOT'
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    }
+    uploadArchives {
+        def localMavenRepo = 'file://' + new File(System.getProperty('user.home'), '.m2/repository').absolutePath
+        repositories {
+            mavenDeployer {
+                repository(url: localMavenRepo)
+                //构造项目的Pom文件
+                pom.project {
+                    name = project.name
+                    packaging = 'jar'
+                    description = 'description'
+                }
+            }
+
+        }
+    }
+
+    dependencies {
+        compileOnly 'org.projectlombok:lombok:1.18.8'
+        annotationProcessor 'org.projectlombok:lombok:1.18.8'
+        compile 'cn.hutool:hutool-all:5.7.4'
+        compile group: 'org.mapstruct',name: 'mapstruct-jdk8', version: '1.3.1.Final'
+        annotationProcessor ("org.mapstruct:mapstruct-processor:1.3.1.Final")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:2.2.6.RELEASE"
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:Hoxton.SR3"
+        }
+        dependencies {
+            //dependency "org.springframework.boot:spring-boot-starter-web:2.2.6.RELEASE"
+            dependency "com.github.xiaoymin:knife4j-spring-boot-starter:3.0.3"
+            dependency "com.alibaba:fastjson:1.2.75"
+            dependency "cn.hutool:hutool-all:5.7.4"
+
+            dependency 'com.alibaba.cola:cola-component-dto:4.0.1'
+            dependency 'com.alibaba.cola:cola-component-domain-starter:4.0.1'
+            dependency 'com.alibaba.cola:cola-component-catchlog-starter:4.0.1'
+            dependency 'com.github.pagehelper:pagehelper-spring-boot-starter:1.3.1'
+            dependency 'org.apache.commons:commons-lang3:3.12.0'
+            dependency 'com.alibaba:druid-spring-boot-starter:1.2.6'
+            dependency 'io.swagger:swagger-annotations:1.5.22'
+
+        }
+    }
+
+    compileJava {
+        options.compilerArgs = [
+                '-Amapstruct.suppressGeneratorTimestamp=true',
+                '-Amapstruct.suppressGeneratorVersionInfoComment=true'
+        ]
+    }
+}
+
+
+def createServiceModule() {
+    println "--------------开始创建模块---------------------"
+    def module = "system"
+    def dirs = ["app", "adapter", "client", "domain", "infrastructure", "start"]
+    def parent = "arch-service/arch-service-" + module;
+    //def parent = "arch-common";
+
+    // FileUtil.mkdir("./" + parent);
+    mkdir(parent)
+    dirs.each {
+        mkdir(parent + "/${module}-${it}")
+        file(parent + "/${module}-${it}/build.gradle").createNewFile()
+    }
+
+    println "--------------完成创建模块---------------------"
+}
+
+//createServiceModule()
+
+
