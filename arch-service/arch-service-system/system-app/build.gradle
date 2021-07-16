@@ -1,4 +1,6 @@
 dependencies {
+    api('org.springframework.boot:spring-boot-starter-security')
     api(project(":arch-service:arch-service-system:system-client"))
     api(project(":arch-service:arch-service-system:system-infrastructure"))
+    api(project(":arch-library"))
 }

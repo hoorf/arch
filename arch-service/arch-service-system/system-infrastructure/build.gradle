@@ -4,4 +4,5 @@ dependencies {
     api 'mysql:mysql-connector-java'
     api 'com.alibaba:druid-spring-boot-starter'
     api 'com.github.pagehelper:pagehelper-spring-boot-starter'
+    api("org.springframework.boot:spring-boot-starter-data-redis")
 }

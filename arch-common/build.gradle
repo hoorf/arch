@@ -4,6 +4,8 @@ dependencies {
     api 'com.alibaba.cola:cola-component-domain-starter'
     api 'com.alibaba.cola:cola-component-catchlog-starter'
     api 'org.apache.commons:commons-lang3'
+    api("com.alibaba:fastjson")
     compileOnly 'org.springframework.boot:spring-boot-starter-web'
+    api("cn.hutool:hutool-all")
 
 }

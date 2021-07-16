@@ -1,10 +1,8 @@
 package org.github.hoorf.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-import org.github.hoorf.core.DomainEntity;
 
 import java.io.Serializable;
 import java.util.Date;

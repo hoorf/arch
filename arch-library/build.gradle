@@ -1,12 +1,14 @@
 
 dependencies {
-
     api("org.springframework.cloud:spring-cloud-starter-openfeign")
     api("org.springframework.boot:spring-boot-starter-web")
     api("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
     api("com.github.xiaoymin:knife4j-spring-boot-starter")
     api("com.alibaba:fastjson")
     api("cn.hutool:hutool-all")
+    api('io.jsonwebtoken:jjwt')
+    api('eu.bitwalker:UserAgentUtils')
+    api(project(":arch-common"))
 
 
 }
