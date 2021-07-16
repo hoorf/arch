@@ -27,7 +27,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.Map;
 
-@Service
+//@Service
 public class SysLoginServiceImpl implements SysLoginService {
 
     @Autowired

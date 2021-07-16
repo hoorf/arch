@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
  *
  * @author ruoyi
  */
-@Component
+//@Component
 public class TokenService
 {
     // 令牌自定义标识

@@ -95,7 +95,7 @@ subprojects {
 
 def createServiceModule() {
     println "--------------开始创建模块---------------------"
-    def module = "system"
+    def module = "order"
     def dirs = ["app", "adapter", "client", "domain", "infrastructure", "start"]
     def parent = "arch-service/arch-service-" + module;
     //def parent = "arch-common";
