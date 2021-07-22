@@ -13,6 +13,7 @@ import java.util.Map;
 @Setter
 public class BaseEntity implements Serializable {
 
+
     /**
      * 搜索值
      */

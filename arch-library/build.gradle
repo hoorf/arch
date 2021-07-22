@@ -1,3 +1,6 @@
+plugins {
+    id 'java-library'
+}
 
 dependencies {
     api("org.springframework.cloud:spring-cloud-starter-openfeign")
@@ -11,10 +14,4 @@ dependencies {
     api(project(":arch-common"))
 
 
-}
-
-dependencyManagement{
-    imports{
-
-    }
 }

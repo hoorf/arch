@@ -1,3 +1,7 @@
+plugins {
+    id 'java-library'
+}
+
 dependencies {
     api project(":arch-service:arch-service-system:system-domain")
     api 'org.springframework.boot:spring-boot-starter-web'

@@ -1,3 +1,7 @@
+plugins {
+    id 'java-library'
+}
+
 dependencies {
     api 'com.alibaba.cola:cola-component-dto'
     api 'io.swagger:swagger-annotations'

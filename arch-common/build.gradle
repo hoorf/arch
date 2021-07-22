@@ -1,4 +1,6 @@
-
+plugins {
+    id 'java-library'
+}
 dependencies {
     api 'com.alibaba.cola:cola-component-dto'
     api 'com.alibaba.cola:cola-component-domain-starter'

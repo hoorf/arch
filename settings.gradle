@@ -1,27 +1,34 @@
+//pluginManagement {
+//    repositories {
+//        maven { url "https://plugins.gradle.org/m2/" }
+//        gradlePluginPortal()
+//    }
+//}
+
 rootProject.name = 'arch'
 include 'arch-common'
 include 'arch-library'
 include 'arch-register'
 
+//
+//file("${rootDir}/arch-service").eachDir {
+//    def pname = it.name;
+//    if (pname.startsWith("arch-service")) {
+//        def module = pname.replace("arch-service-", "")
+//        it.eachDir {
+//            def ename = it.name;
+//            ename = ename.replace(module + "-", "")
+//            if (["app", "adapter", "client", "domain", "infrastructure", "start"].contains(ename))
+//                include "arch-service:${pname}:${it.name}"
+//        }
+//    }
+//}
 
-file("${rootDir}/arch-service").eachDir {
-    def pname = it.name;
-    if (pname.startsWith("arch-service")) {
-        def module = pname.replace("arch-service-", "")
-        it.eachDir {
-            def ename = it.name;
-            ename = ename.replace(module + "-", "")
-            if (["app", "adapter", "client", "domain", "infrastructure", "start"].contains(ename))
-                include "arch-service:${pname}:${it.name}"
-        }
-    }
-}
 
-
-//include 'arch-service:arch-service-system:system-adapter'
-//include 'arch-service:arch-service-system:system-app'
-//include 'arch-service:arch-service-system:system-client'
-//include 'arch-service:arch-service-system:system-domain'
-//include 'arch-service:arch-service-system:system-infrastructure'
-//include 'arch-service:arch-service-system:system-start'
+include 'arch-service:arch-service-system:system-adapter'
+include 'arch-service:arch-service-system:system-app'
+include 'arch-service:arch-service-system:system-client'
+include 'arch-service:arch-service-system:system-domain'
+include 'arch-service:arch-service-system:system-infrastructure'
+include 'arch-service:arch-service-system:system-start'
 
