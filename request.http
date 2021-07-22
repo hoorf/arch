@@ -1,0 +1,16 @@
+GET http://localhost:9001/account/getAccountInfo
+Accept: application/json
+
+###
+
+
+GET http://localhost:9001/test
+Accept: application/json
+
+###
+
+
+GET http://localhost:9002/getAccountInfo
+Accept: application/json
+
+###

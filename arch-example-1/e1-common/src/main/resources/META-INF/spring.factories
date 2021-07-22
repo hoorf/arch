@@ -1,0 +1,6 @@
+org.springframework.boot.env.EnvironmentPostProcessor=\
+org.github.hoorf.config.CommonBootstrapPostProcessor 
+
+
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.github.hoorf.config.CommonAutoConfig
