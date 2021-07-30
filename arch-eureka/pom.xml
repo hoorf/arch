@@ -19,4 +19,46 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.spotify</groupId>-->
+<!--                <artifactId>docker-maven-plugin</artifactId>-->
+<!--                <version>0.4.12</version>-->
+<!--                &lt;!&ndash;docker镜像相关的配置信息&ndash;&gt;-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>build</goal>-->
+<!--                        </goals>-->
+<!--                        <phase>package</phase>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--                <configuration>-->
+<!--                   <dockerHost>http://192.168.111.129:2357</dockerHost>-->
+<!--                    &lt;!&ndash;镜像名，这里用工程名&ndash;&gt;-->
+<!--                    <imageName>${project.artifactId}</imageName>-->
+<!--                    &lt;!&ndash;Dockerfile文件所在目录&ndash;&gt;-->
+<!--                    <dockerDirectory>${project.basedir}</dockerDirectory>-->
+<!--                    &lt;!&ndash;TAG,这里用工程版本号&ndash;&gt;-->
+<!--                    <imageTags>-->
+<!--                        <imageTag>${project.version}</imageTag>-->
+<!--                    </imageTags>-->
+<!--                    &lt;!&ndash;构建镜像的配置信息&ndash;&gt;-->
+<!--                    <resources>-->
+<!--                        <resource>-->
+<!--                            <targetPath>/target/</targetPath>-->
+<!--                            <directory>${project.build.directory}</directory>-->
+<!--                            <include>${project.build.finalName}.jar</include>-->
+<!--                        </resource>-->
+<!--                    </resources>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+        </plugins>
+    </build>
+
 </project>

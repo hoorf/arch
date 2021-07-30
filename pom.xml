@@ -10,6 +10,9 @@
     <modules>
         <module>arch-example-1</module>
         <module>arch-eureka</module>
+        <module>arch-example-shared-jdbc</module>
+        <module>arch-example-spring-extended</module>
+        <module>arch-example-jta</module>
     </modules>
 
     <packaging>pom</packaging>

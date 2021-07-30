@@ -1,0 +1,16 @@
+version: '2'
+services:
+  eureka:
+    image: eureka:1.0-SNAPSHOT
+    container_name: eureka
+    restart: unless-stopped
+    ports:
+    - 8761:8761
+  service:
+    image: account:1.0-SNAPSHOT
+    container_name: account
+    restart: unless-stopped
+    links:
+      - eureka:eureka-host
+    depends_on:
+      - eureka

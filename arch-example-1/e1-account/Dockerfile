@@ -1,0 +1,10 @@
+FROM java:8u111-jdk
+ENV ARTIFACTID e1-account
+ENV ARTIFACTVERSION 1.0-SNAPSHOT
+ENV HOME_PATH /home
+
+ADD /target/$ARTIFACTID-$ARTIFACTVERSION.jar $HOME_PATH/account.jar
+
+WORKDIR $HOME_PATH
+
+ENTRYPOINT ["java","-jar","account.jar"]

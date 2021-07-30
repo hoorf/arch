@@ -1,0 +1,27 @@
+spring:
+  jta:
+    atomikos:
+      datasource:
+        primary:
+          borrow-connection-timeout: 10000
+          max-lifetime: 20000
+          max-pool-size: 25
+          min-pool-size: 3
+          unique-resource-name: database0
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          xa-properties:
+            password: root
+            url: jdbc:mysql://localhost:3306/database0
+            user: root
+        second:
+          borrow-connection-timeout: 10000
+          max-lifetime: 20000
+          max-pool-size: 25
+          min-pool-size: 3
+          unique-resource-name: database1
+          xa-data-source-class-name: com.mysql.cj.jdbc.MysqlXADataSource
+          xa-properties:
+            password: root
+            url: jdbc:mysql://localhost:3306/database1
+            user: root
+    enabled: true
